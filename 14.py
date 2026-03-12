@@ -1,21 +1,20 @@
-'''
-write a function that checks whether a graph contain a cycle by performing
-a DFS traversal and tracking visited vertices and their parent nodes.
-'''
-def has_cycle(graph):
-    visited = set()
-    for v in graph.vertices:
-        if v not in visited:
-            if dfs_cycle(graph, v, visited, None):
-                return True
-    return False
+class MatrixGraph:
+    def __init__(self, size):
+        self.size = size
+        self.matrix = [
+            [0] * size
+            for _ in range(size)
+        ]
+    
+    def add_edge(self, u, v):
+        self.matrix[u][v] = 1
+        self.matrix[v][u] = 1
+    
+    def neighbors(self, v):
+        result = []
 
-def dfs_cycle(graph, v, visited, parent):
-    visited.add(v)
-    for n in graph.neighbors(v):
-        if n not in visited:
-            if dfs_cycle(graph, n, visited, v):
-                return True
-            elif n != parent:
-                return True
-    return False
+        for i in range(self.size):
+            if self.matrix[v][i] == 1:
+                result.append(i)
+
+        return result

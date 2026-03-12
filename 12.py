@@ -1,16 +1,18 @@
 '''
-write an iterative function that performs DFS on a graph
-starting from a given vertex, using a stack to visit nodes 
-and track which vertices have already been visited
+write a function that performs BFS on a graph starting
+from a given vertex, using a queue to visit nodes level 
+by level while tracking visited vertices
 '''
-def dfs_iter(graph, start):
+from collections import deque
+
+def bfs(graph, start):
     visited = set()
-    stack = [start]
-    while stack:
-        v = stack.pop()
+    queue = deque([start])
+    while queue:
+        v = queue.popleft()
         if v in visited:
             continue
         visited.add(v)
         print(v)
         for n in graph.neighbors(v):
-            stack.append(n)
+            queue.append(n)

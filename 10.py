@@ -31,6 +31,8 @@ class AdjacencySetGraph:
     def neighbors(self, v):
         return self.adj.get(v, set())
     
+# STATUS: all good
+    
 '''
 write functions that perform DFS on a graph, check whether the graph
 is strongly connected using DFS, and create a reversed version of 

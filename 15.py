@@ -1,20 +1,23 @@
-class MatrixGraph:
-    def __init__(self, size):
-        self.size = size
-        self.matrix = [
-            [0] * size
-            for _ in range(size)
-        ]
-    
-    def add_edge(self, u, v):
-        self.matrix[u][v] = 1
-        self.matrix[v][u] = 1
-    
-    def neighbors(self, v):
-        result = []
-
-        for i in range(self.size):
-            if self.matrix[v][i] == 1:
-                result.append(i)
-
-        return result
+'''
+write a function that finds all connected components in a graph
+by performing DFS and grouping together vertices that are reachable
+from each other
+'''
+def connected_components(graph):
+    visited = set()
+    components = []
+    for v in graph.adj:
+        if v not in visited:
+            stack = [v]
+            component = []
+            while stack:
+                node = stack.pop()
+                if node in visited:
+                    continue
+                visited.add(node)
+                component.append(node)
+                for n in graph.neighbors(node):
+                    if n not in visited:
+                        stack.append(n)
+            components.append(component)
+    return components

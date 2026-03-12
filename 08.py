@@ -35,3 +35,5 @@ class EdgeSetGraph:
             if u == v:
                 result.add(w)
         return result
+    
+# STATUS: all good

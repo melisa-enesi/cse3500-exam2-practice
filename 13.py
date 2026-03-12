@@ -1,18 +1,21 @@
 '''
-write a function that performs BFS on a graph starting
-from a given vertex, using a queue to visit nodes level 
-by level while tracking visited vertices
+write a function that checks whether a graph contain a cycle by performing
+a DFS traversal and tracking visited vertices and their parent nodes.
 '''
-from collections import deque
-
-def bfs(graph, start):
+def has_cycle(graph):
     visited = set()
-    queue = deque([start])
-    while queue:
-        v = queue.popleft()
-        if v in visited:
-            continue
-        visited.add(v)
-        print(v)
-        for n in graph.neighbors(v):
-            queue.append(n)
+    for v in graph.vertices:
+        if v not in visited:
+            if dfs_cycle(graph, v, visited, None):
+                return True
+    return False
+
+def dfs_cycle(graph, v, visited, parent):
+    visited.add(v)
+    for n in graph.neighbors(v):
+        if n not in visited:
+            if dfs_cycle(graph, n, visited, v):
+                return True
+            elif n != parent:
+                return True
+    return False

@@ -1,6 +1,6 @@
 class UndirectedEdgeSetGraph:
     def __init__(self):
-        self.vertoces = set()
+        self.vertices = set()
         self.edges = set()
 
     def add_vertex(self, v):
@@ -32,3 +32,5 @@ class UndirectedEdgeSetGraph:
             if v in edge:
                 result.update(edge - {v})
         return result
+    
+# STATUS: all good
