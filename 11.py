@@ -14,3 +14,5 @@ def dfs_iter(graph, start):
         print(v)
         for n in graph.neighbors(v):
             stack.append(n)
+
+# STATUS: all good

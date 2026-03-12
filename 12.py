@@ -16,3 +16,5 @@ def bfs(graph, start):
         print(v)
         for n in graph.neighbors(v):
             queue.append(n)
+
+# STATUS: all good

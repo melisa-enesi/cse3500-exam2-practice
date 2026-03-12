@@ -62,3 +62,5 @@ def reverse_graph(graph):
         for v in graph.adj[u]:
             rev.add_edge(v, u)
     return rev
+
+# STATUS: all good

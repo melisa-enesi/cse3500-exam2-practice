@@ -18,3 +18,5 @@ class MatrixGraph:
                 result.append(i)
 
         return result
+    
+# STATUS: good

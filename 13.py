@@ -1,5 +1,5 @@
 '''
-write a function that checks whether a graph contain a cycle by performing
+write a function that checks whether a graph contains a cycle by performing
 a DFS traversal and tracking visited vertices and their parent nodes.
 '''
 def has_cycle(graph):
@@ -19,3 +19,5 @@ def dfs_cycle(graph, v, visited, parent):
             elif n != parent:
                 return True
     return False
+
+# STATUS: all good
