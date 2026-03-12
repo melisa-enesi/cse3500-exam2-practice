@@ -19,4 +19,4 @@ class MatrixGraph:
 
         return result
     
-# STATUS: good
+# STATUS: iffy on neighbors

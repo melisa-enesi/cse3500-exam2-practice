@@ -33,4 +33,4 @@ class UndirectedEdgeSetGraph:
                 result.update(edge - {v})
         return result
     
-# STATUS: all good
+# STATUS: all good except for def neighbors(self, v)

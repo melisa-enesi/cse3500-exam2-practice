@@ -13,6 +13,7 @@ def dfs_iter(graph, start):
         visited.add(v)
         print(v)
         for n in graph.neighbors(v):
-            stack.append(n)
+            if n not in visited:
+                stack.append(n)
 
-# STATUS: all good
+# STATUS: ehh...

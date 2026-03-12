@@ -25,7 +25,7 @@ class EdgeSetGraph:
 
         self.edges = {
             e for e in self.edges
-            if e[0] != v and e[v] != v
+            if e[0] != v and e[1] != v
         }
 
     def neighbors(self, v):

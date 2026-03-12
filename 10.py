@@ -31,7 +31,7 @@ class AdjacencySetGraph:
     def neighbors(self, v):
         return self.adj.get(v, set())
     
-# STATUS: all good
+# STATUS: yeesh
     
 '''
 write functions that perform DFS on a graph, check whether the graph
@@ -63,4 +63,4 @@ def reverse_graph(graph):
             rev.add_edge(v, u)
     return rev
 
-# STATUS: all good
+# STATUS: yeesh

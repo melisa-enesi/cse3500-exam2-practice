@@ -21,3 +21,5 @@ def connected_components(graph):
                         stack.append(n)
             components.append(component)
     return components
+
+# STATUS: terrible
